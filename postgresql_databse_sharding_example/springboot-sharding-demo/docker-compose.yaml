@@ -1,0 +1,48 @@
+services:
+  shard-a:
+    image: postgres:15
+    container_name: shard-a
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: shard_a
+    volumes:
+      - ./init-scripts/shard-a-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  shard-b:
+    image: postgres:15
+    container_name: shard-b
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: shard_b
+    volumes:
+      - ./init-scripts/shard-b-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  shard-c:
+    image: postgres:15
+    container_name: shard-c
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: shard_c
+    volumes:
+      - ./init-scripts/shard-c-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  shard-d:
+    image: postgres:15
+    container_name: shard-d
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: shard_d
+    volumes:
+      - ./init-scripts/shard-d-init.sql:/docker-entrypoint-initdb.d/init.sql

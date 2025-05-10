@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springboot-sharding-demo
+  config:
+    import: classpath:sharding-metadata.yml
+
+  jpa:
+    show-sql: true
+

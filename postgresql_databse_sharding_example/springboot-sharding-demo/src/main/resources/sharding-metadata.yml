@@ -1,0 +1,46 @@
+# Sharding properties
+sharding:
+  shards:
+    - name: shard-a
+      range:
+        start: 1
+        end: 25
+      host: localhost
+      port: 5433
+      database: shard_a
+      credentials:
+        username: user
+        password: pass
+
+    - name: shard-b
+      range:
+        start: 26
+        end: 50
+      host: localhost
+      port: 5434
+      database: shard_b
+      credentials:
+        username: user
+        password: pass
+
+    - name: shard-c
+      range:
+        start: 51
+        end: 75
+      host: localhost
+      port: 5435
+      database: shard_c
+      credentials:
+        username: user
+        password: pass
+
+    - name: shard-d
+      range:
+        start: 76
+        end: 100
+      host: localhost
+      port: 5436
+      database: shard_d
+      credentials:
+        username: user
+        password: pass
